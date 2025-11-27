@@ -96,7 +96,7 @@ class Support_Detector {
 		$library_labels = array(
 			'imagick' => 'ImageMagick',
 			'gd'      => 'GD Library',
-			'none'    => __( 'No image library detected', 'webpeasy' ),
+			'none'    => __( 'No image library detected', 'WebPeasy' ),
 		);
 
 		return array(

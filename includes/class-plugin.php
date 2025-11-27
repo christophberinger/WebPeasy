@@ -181,7 +181,7 @@ class Plugin {
 		$settings_link = sprintf(
 			'<a href="%s">%s</a>',
 			admin_url( 'options-general.php?page=webpeasy' ),
-			__( 'Settings', 'webpeasy' )
+			__( 'Settings', 'WebPeasy' )
 		);
 
 		array_unshift( $links, $settings_link );
@@ -218,7 +218,8 @@ class Plugin {
 			return false;
 		}
 
-		return strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false;
+		$http_accept = wp_unslash( $_SERVER['HTTP_ACCEPT'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		return strpos( $http_accept, 'image/webp' ) !== false;
 	}
 
 	/**

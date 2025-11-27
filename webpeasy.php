@@ -8,7 +8,7 @@
  * Author URI: https://beringer.io
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: webpeasy
+ * Text Domain: WebPeasy
  * Domain Path: /languages
  *
  * @package WebPEasy

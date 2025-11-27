@@ -74,7 +74,7 @@ class Thumbnail_Regenerator {
 		if ( ! wp_attachment_is_image( $attachment_id ) ) {
 			return new \WP_Error(
 				'invalid_attachment',
-				__( 'Attachment is not an image.', 'webpeasy' )
+				__( 'Attachment is not an image.', 'WebPeasy' )
 			);
 		}
 
@@ -84,7 +84,7 @@ class Thumbnail_Regenerator {
 		if ( ! $file_path || ! file_exists( $file_path ) ) {
 			return new \WP_Error(
 				'file_not_found',
-				__( 'Image file not found.', 'webpeasy' )
+				__( 'Image file not found.', 'WebPeasy' )
 			);
 		}
 
@@ -105,7 +105,7 @@ class Thumbnail_Regenerator {
 		if ( empty( $new_metadata ) ) {
 			return new \WP_Error(
 				'regeneration_failed',
-				__( 'Failed to generate attachment metadata.', 'webpeasy' )
+				__( 'Failed to generate attachment metadata.', 'WebPeasy' )
 			);
 		}
 
@@ -115,7 +115,7 @@ class Thumbnail_Regenerator {
 		return array(
 			'success'       => true,
 			'attachment_id' => $attachment_id,
-			'message'       => __( 'Thumbnails regenerated successfully.', 'webpeasy' ),
+			'message'       => __( 'Thumbnails regenerated successfully.', 'WebPeasy' ),
 		);
 	}
 
@@ -142,7 +142,7 @@ class Thumbnail_Regenerator {
 				$results['errors']++;
 				$results['messages'][] = sprintf(
 					/* translators: 1: Attachment ID, 2: Error message */
-					__( 'Failed to process attachment #%1$d: %2$s', 'webpeasy' ),
+					__( 'Failed to process attachment #%1$d: %2$s', 'WebPeasy' ),
 					$attachment_id,
 					$result->get_error_message()
 				);

@@ -67,8 +67,8 @@ class Admin_UI {
 	 */
 	public function add_settings_page() {
 		add_options_page(
-			__( 'WebPeasy Settings', 'webpeasy' ),
-			__( 'WebPeasy', 'webpeasy' ),
+			__( 'WebPeasy Settings', 'WebPeasy' ),
+			__( 'WebPeasy', 'WebPeasy' ),
 			'manage_options',
 			'webpeasy',
 			array( $this, 'render_settings_page' )
@@ -200,17 +200,17 @@ class Admin_UI {
 			?>
 			<div class="notice notice-warning is-dismissible" data-notice="webpeasy-webp">
 				<p>
-					<strong><?php esc_html_e( 'WebPeasy:', 'webpeasy' ); ?></strong>
+					<strong><?php esc_html_e( 'WebPeasy:', 'WebPeasy' ); ?></strong>
 					<?php
 					printf(
 						/* translators: %s: Image library name */
-						esc_html__( 'WebP format is not supported by your current PHP configuration (%s). The plugin is active but will not convert images to WebP until WebP support is available.', 'webpeasy' ),
+						esc_html__( 'WebP format is not supported by your current PHP configuration (%s). The plugin is active but will not convert images to WebP until WebP support is available.', 'WebPeasy' ),
 						esc_html( $info['library_label'] )
 					);
 					?>
 				</p>
 				<p>
-					<?php esc_html_e( 'Please contact your hosting provider to enable WebP support in ImageMagick or GD.', 'webpeasy' ); ?>
+					<?php esc_html_e( 'Please contact your hosting provider to enable WebP support in ImageMagick or GD.', 'WebPeasy' ); ?>
 				</p>
 			</div>
 			<?php
@@ -240,17 +240,17 @@ class Admin_UI {
 
 			<!-- Status Box -->
 			<div class="status-box <?php echo $support_info['supported'] ? '' : 'unsupported'; ?>">
-				<h3><?php esc_html_e( 'WebP Support Status', 'webpeasy' ); ?></h3>
+				<h3><?php esc_html_e( 'WebP Support Status', 'WebPeasy' ); ?></h3>
 
 				<div class="status-item">
 					<span class="dashicons <?php echo $support_info['supported'] ? 'dashicons-yes' : 'dashicons-no'; ?>"></span>
-					<strong><?php esc_html_e( 'WebP Support:', 'webpeasy' ); ?></strong>
+					<strong><?php esc_html_e( 'WebP Support:', 'WebPeasy' ); ?></strong>
 					<span style="margin-left: 8px;">
 						<?php
 						if ( $support_info['supported'] ) {
-							esc_html_e( 'Enabled', 'webpeasy' );
+							esc_html_e( 'Enabled', 'WebPeasy' );
 						} else {
-							esc_html_e( 'Disabled', 'webpeasy' );
+							esc_html_e( 'Disabled', 'WebPeasy' );
 						}
 						?>
 					</span>
@@ -258,16 +258,16 @@ class Admin_UI {
 
 				<div class="status-item">
 					<span class="dashicons dashicons-admin-settings"></span>
-					<strong><?php esc_html_e( 'Image Library:', 'webpeasy' ); ?></strong>
+					<strong><?php esc_html_e( 'Image Library:', 'WebPeasy' ); ?></strong>
 					<span style="margin-left: 8px;"><?php echo esc_html( $support_info['library_label'] ); ?></span>
 				</div>
 
 				<?php if ( $support_info['supported'] ) : ?>
 					<div class="status-item">
 						<span class="dashicons dashicons-images-alt2"></span>
-						<strong><?php esc_html_e( 'Active Conversions:', 'webpeasy' ); ?></strong>
+						<strong><?php esc_html_e( 'Active Conversions:', 'WebPeasy' ); ?></strong>
 						<span style="margin-left: 8px;">
-							<?php esc_html_e( 'JPEG → WebP, PNG → WebP', 'webpeasy' ); ?>
+							<?php esc_html_e( 'JPEG → WebP, PNG → WebP', 'WebPeasy' ); ?>
 						</span>
 					</div>
 				<?php endif; ?>
@@ -276,8 +276,8 @@ class Admin_UI {
 			<?php if ( ! $support_info['supported'] ) : ?>
 				<div class="notice notice-error inline">
 					<p>
-						<strong><?php esc_html_e( 'WebP conversion is currently disabled.', 'webpeasy' ); ?></strong>
-						<?php esc_html_e( 'The settings below will have no effect until WebP support is enabled in your PHP environment.', 'webpeasy' ); ?>
+						<strong><?php esc_html_e( 'WebP conversion is currently disabled.', 'WebPeasy' ); ?></strong>
+						<?php esc_html_e( 'The settings below will have no effect until WebP support is enabled in your PHP environment.', 'WebPeasy' ); ?>
 					</p>
 				</div>
 			<?php endif; ?>
@@ -293,7 +293,7 @@ class Admin_UI {
 						<tr>
 							<th scope="row">
 								<label for="webp_quality">
-									<?php esc_html_e( 'WebP Quality', 'webpeasy' ); ?>
+									<?php esc_html_e( 'WebP Quality', 'WebPeasy' ); ?>
 								</label>
 							</th>
 							<td>
@@ -322,7 +322,7 @@ class Admin_UI {
 								</div>
 								<p class="description">
 									<?php
-									esc_html_e( 'Set the compression quality for WebP images (0-100). Higher values produce better quality but larger file sizes. Recommended: 80-85.', 'webpeasy' );
+									esc_html_e( 'Set the compression quality for WebP images (0-100). Higher values produce better quality but larger file sizes. Recommended: 80-85.', 'WebPeasy' );
 									?>
 								</p>
 							</td>
@@ -330,38 +330,38 @@ class Admin_UI {
 					</tbody>
 				</table>
 
-				<?php submit_button( __( 'Save Settings', 'webpeasy' ) ); ?>
+				<?php submit_button( __( 'Save Settings', 'WebPeasy' ) ); ?>
 			</form>
 
 			<!-- Information Box -->
 			<div class="info-box">
-				<h4><?php esc_html_e( 'How It Works', 'webpeasy' ); ?></h4>
+				<h4><?php esc_html_e( 'How It Works', 'WebPeasy' ); ?></h4>
 				<ul>
-					<li><?php esc_html_e( 'Original files in your Media Library remain untouched (JPEG, PNG, etc.)', 'webpeasy' ); ?></li>
-					<li><?php esc_html_e( 'All new image sizes (thumbnails, medium, large) are automatically generated as WebP', 'webpeasy' ); ?></li>
-					<li><?php esc_html_e( 'Frontend images are served as WebP for better performance', 'webpeasy' ); ?></li>
-					<li><?php esc_html_e( 'No changes to attachment metadata or database structure', 'webpeasy' ); ?></li>
+					<li><?php esc_html_e( 'Original files in your Media Library remain untouched (JPEG, PNG, etc.)', 'WebPeasy' ); ?></li>
+					<li><?php esc_html_e( 'All new image sizes (thumbnails, medium, large) are automatically generated as WebP', 'WebPeasy' ); ?></li>
+					<li><?php esc_html_e( 'Frontend images are served as WebP for better performance', 'WebPeasy' ); ?></li>
+					<li><?php esc_html_e( 'No changes to attachment metadata or database structure', 'WebPeasy' ); ?></li>
 				</ul>
 
-				<h4><?php esc_html_e( 'Regenerate Existing Images', 'webpeasy' ); ?></h4>
+				<h4><?php esc_html_e( 'Regenerate Existing Images', 'WebPeasy' ); ?></h4>
 				<p>
-					<?php esc_html_e( 'Generate WebP versions for all existing images. This plugin uses smart PHP-based URL rewriting:', 'webpeasy' ); ?>
+					<?php esc_html_e( 'Generate WebP versions for all existing images. This plugin uses smart PHP-based URL rewriting:', 'WebPeasy' ); ?>
 				</p>
 				<ul style="margin-left: 20px; margin-bottom: 15px;">
-					<li><?php esc_html_e( 'Generates WebP versions alongside original JPG/PNG thumbnails', 'webpeasy' ); ?></li>
-					<li><?php esc_html_e( 'Automatically replaces URLs with WebP when browsers support it', 'webpeasy' ); ?></li>
-					<li><?php esc_html_e( 'Falls back to original format for older browsers', 'webpeasy' ); ?></li>
-					<li><?php esc_html_e( 'Works on any server (Apache, Nginx, etc.) - no .htaccess needed', 'webpeasy' ); ?></li>
-					<li><?php esc_html_e( 'No database modifications - your original URLs are preserved', 'webpeasy' ); ?></li>
+					<li><?php esc_html_e( 'Generates WebP versions alongside original JPG/PNG thumbnails', 'WebPeasy' ); ?></li>
+					<li><?php esc_html_e( 'Automatically replaces URLs with WebP when browsers support it', 'WebPeasy' ); ?></li>
+					<li><?php esc_html_e( 'Falls back to original format for older browsers', 'WebPeasy' ); ?></li>
+					<li><?php esc_html_e( 'Works on any server (Apache, Nginx, etc.) - no .htaccess needed', 'WebPeasy' ); ?></li>
+					<li><?php esc_html_e( 'No database modifications - your original URLs are preserved', 'WebPeasy' ); ?></li>
 				</ul>
 				<p style="background: #d1ecf1; border-left: 4px solid #0c5460; padding: 10px; margin: 15px 0;">
-					<strong><?php esc_html_e( 'How it works:', 'webpeasy' ); ?></strong>
-					<?php esc_html_e( 'The plugin intercepts page output and automatically replaces image.jpg URLs with image.webp if the WebP file exists and the browser supports it. Everything happens transparently!', 'webpeasy' ); ?>
+					<strong><?php esc_html_e( 'How it works:', 'WebPeasy' ); ?></strong>
+					<?php esc_html_e( 'The plugin intercepts page output and automatically replaces image.jpg URLs with image.webp if the WebP file exists and the browser supports it. Everything happens transparently!', 'WebPeasy' ); ?>
 				</p>
 
 				<div style="margin: 20px 0;">
 					<button type="button" id="webpeasy-regenerate-btn" class="button button-primary">
-						<?php esc_html_e( 'Regenerate Thumbnails', 'webpeasy' ); ?>
+						<?php esc_html_e( 'Regenerate Thumbnails', 'WebPeasy' ); ?>
 					</button>
 				</div>
 
@@ -369,7 +369,7 @@ class Admin_UI {
 					<div style="margin-bottom: 10px;">
 						<strong id="webpeasy-progress-status">
 							<span class="dashicons dashicons-update" style="animation: rotation 2s infinite linear;"></span>
-							<?php esc_html_e( 'Processing images...', 'webpeasy' ); ?>
+							<?php esc_html_e( 'Processing images...', 'WebPeasy' ); ?>
 						</strong>
 					</div>
 					<div style="background: #f0f0f1; border-radius: 4px; height: 24px; position: relative; overflow: hidden;">
@@ -381,7 +381,7 @@ class Admin_UI {
 					</div>
 					<div style="margin-top: 10px;">
 						<button type="button" id="webpeasy-cancel-btn" class="button">
-							<?php esc_html_e( 'Cancel', 'webpeasy' ); ?>
+							<?php esc_html_e( 'Cancel', 'WebPeasy' ); ?>
 						</button>
 					</div>
 				</div>
@@ -443,7 +443,7 @@ jQuery(document).ready(function($) {
 			return;
 		}
 
-		if (!confirm('" . esc_js( __( 'This will generate WebP versions for all images in your media library. Original files will be preserved. This may take a while. Continue?', 'webpeasy' ) ) . "')) {
+		if (!confirm('" . esc_js( __( 'This will generate WebP versions for all images in your media library. Original files will be preserved. This may take a while. Continue?', 'WebPeasy' ) ) . "')) {
 			return;
 		}
 
@@ -463,7 +463,7 @@ jQuery(document).ready(function($) {
 		// Show progress container
 		$('#webpeasy-regeneration-progress').show();
 		$('#webpeasy-regenerate-btn').prop('disabled', true);
-		$('#webpeasy-progress-status').html('<span class=\"dashicons dashicons-update\" style=\"animation: rotation 2s infinite linear;\"></span> " . esc_js( __( 'Processing images...', 'webpeasy' ) ) . "');
+		$('#webpeasy-progress-status').html('<span class=\"dashicons dashicons-update\" style=\"animation: rotation 2s infinite linear;\"></span> " . esc_js( __( 'Processing images...', 'WebPeasy' ) ) . "');
 		$('#webpeasy-cancel-btn').show();
 
 		// Get total image count
@@ -475,17 +475,17 @@ jQuery(document).ready(function($) {
 				totalImages = response.data.total;
 
 				if (totalImages === 0) {
-					showError('" . esc_js( __( 'No images found in media library.', 'webpeasy' ) ) . "');
+					showError('" . esc_js( __( 'No images found in media library.', 'WebPeasy' ) ) . "');
 					return;
 				}
 
 				updateProgress();
 				processNextBatch();
 			} else {
-				showError(response.data.message || '" . esc_js( __( 'Failed to get image count.', 'webpeasy' ) ) . "');
+				showError(response.data.message || '" . esc_js( __( 'Failed to get image count.', 'WebPeasy' ) ) . "');
 			}
 		}).fail(function() {
-			showError('" . esc_js( __( 'Failed to connect to server.', 'webpeasy' ) ) . "');
+			showError('" . esc_js( __( 'Failed to connect to server.', 'WebPeasy' ) ) . "');
 		});
 	}
 
@@ -510,10 +510,10 @@ jQuery(document).ready(function($) {
 				updateProgress();
 				setTimeout(processNextBatch, 100);
 			} else {
-				showError(response.data.message || '" . esc_js( __( 'Failed to process batch.', 'webpeasy' ) ) . "');
+				showError(response.data.message || '" . esc_js( __( 'Failed to process batch.', 'WebPeasy' ) ) . "');
 			}
 		}).fail(function() {
-			showError('" . esc_js( __( 'Failed to connect to server.', 'webpeasy' ) ) . "');
+			showError('" . esc_js( __( 'Failed to connect to server.', 'WebPeasy' ) ) . "');
 		});
 	}
 
@@ -526,21 +526,21 @@ jQuery(document).ready(function($) {
 
 	function completeRegeneration() {
 		isProcessing = false;
-		$('#webpeasy-progress-status').html('<span class=\"dashicons dashicons-yes\" style=\"color: #00a32a;\"></span> " . esc_js( __( 'Regeneration complete!', 'webpeasy' ) ) . "');
+		$('#webpeasy-progress-status').html('<span class=\"dashicons dashicons-yes\" style=\"color: #00a32a;\"></span> " . esc_js( __( 'Regeneration complete!', 'WebPeasy' ) ) . "');
 		$('#webpeasy-cancel-btn').hide();
-		$('#webpeasy-regenerate-btn').prop('disabled', false).text('" . esc_js( __( 'Regenerate Again', 'webpeasy' ) ) . "');
+		$('#webpeasy-regenerate-btn').prop('disabled', false).text('" . esc_js( __( 'Regenerate Again', 'WebPeasy' ) ) . "');
 	}
 
 	function cancelRegeneration() {
 		isProcessing = false;
-		$('#webpeasy-progress-status').html('<span class=\"dashicons dashicons-warning\" style=\"color: #dba617;\"></span> " . esc_js( __( 'Regeneration cancelled.', 'webpeasy' ) ) . "');
+		$('#webpeasy-progress-status').html('<span class=\"dashicons dashicons-warning\" style=\"color: #dba617;\"></span> " . esc_js( __( 'Regeneration cancelled.', 'WebPeasy' ) ) . "');
 		$('#webpeasy-cancel-btn').hide();
 		$('#webpeasy-regenerate-btn').prop('disabled', false);
 	}
 
 	function showError(message) {
 		isProcessing = false;
-		$('#webpeasy-progress-status').html('<span class=\"dashicons dashicons-no\" style=\"color: #d63638;\"></span> " . esc_js( __( 'Error:', 'webpeasy' ) ) . " ' + message);
+		$('#webpeasy-progress-status').html('<span class=\"dashicons dashicons-no\" style=\"color: #d63638;\"></span> " . esc_js( __( 'Error:', 'WebPeasy' ) ) . " ' + message);
 		$('#webpeasy-cancel-btn').hide();
 		$('#webpeasy-regenerate-btn').prop('disabled', false);
 		$('#webpeasy-regeneration-progress').show();
@@ -561,7 +561,7 @@ jQuery(document).ready(function($) {
 		if ( ! check_ajax_referer( 'webpeasy_regenerate', 'nonce', false ) ) {
 			wp_send_json_error(
 				array(
-					'message' => __( 'Security check failed.', 'webpeasy' ),
+					'message' => __( 'Security check failed.', 'WebPeasy' ),
 				)
 			);
 		}
@@ -570,7 +570,7 @@ jQuery(document).ready(function($) {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_send_json_error(
 				array(
-					'message' => __( 'You do not have permission to perform this action.', 'webpeasy' ),
+					'message' => __( 'You do not have permission to perform this action.', 'WebPeasy' ),
 				)
 			);
 		}
@@ -594,7 +594,7 @@ jQuery(document).ready(function($) {
 		if ( ! check_ajax_referer( 'webpeasy_regenerate', 'nonce', false ) ) {
 			wp_send_json_error(
 				array(
-					'message' => __( 'Security check failed.', 'webpeasy' ),
+					'message' => __( 'Security check failed.', 'WebPeasy' ),
 				)
 			);
 		}
@@ -603,7 +603,7 @@ jQuery(document).ready(function($) {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_send_json_error(
 				array(
-					'message' => __( 'You do not have permission to perform this action.', 'webpeasy' ),
+					'message' => __( 'You do not have permission to perform this action.', 'WebPeasy' ),
 				)
 			);
 		}
